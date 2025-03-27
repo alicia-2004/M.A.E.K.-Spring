@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Spring Boot / Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.pid
+
+# VS Code
+.vscode/
+
+# OS-specific
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# JRebel configuration files
+.rebel
+
+# Maven Wrapper (if included)
+.mvn/
