@@ -1,36 +1,35 @@
-# Gradle
-.gradle/
-build/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# IntelliJ IDEA
-.idea/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
 *.iws
 *.iml
 *.ipr
-out/
 
-# Eclipse
-.project
-.classpath
-.settings/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Spring Boot / Java
-*.class
-*.jar
-*.war
-*.ear
-*.log
-*.pid
-
-# VS Code
+### VS Code ###
 .vscode/
 
-# OS-specific
-.DS_Store          # macOS
-Thumbs.db          # Windows
-
-# JRebel configuration files
-.rebel
-
-# Maven Wrapper (if included)
-.mvn/
+.metadata
