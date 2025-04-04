@@ -1,4 +1,10 @@
 const buttonSubmit=document.getElementById("submitButton");
+const buttonRegister=document.getElementById("registerButton");
+
+buttonRegister.onclick = function(){
+    window.open("signUp", "_self");
+}
+
 buttonSubmit.onclick = function(){
     const consumerName=document.getElementById("fname").value;
     const pass=document.getElementById("fpass").value;
