@@ -60,3 +60,20 @@ function displayWeatherData(item) {
     list.appendChild(ul);
   })
 }
+function displayFutureDayData(item) {
+  const table = document.getElementById("table");
+  const diaSemana = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+
+  item.forecast.forecastday.forEach((day) =>{
+    let tr = document.createElement("tr");
+    let th = document.createElement("th");
+    let td = document.createElement("td");
+    th.textContent = diaSemana[day.date.getDay()];
+    tr.appendChild(th);
+
+    td.textContent = day.day.condition.icon;
+    tr.appendChild(td);
+    table.appendChild(tr);
+    
+  })
+}
