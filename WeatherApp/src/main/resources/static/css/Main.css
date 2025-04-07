@@ -12,6 +12,31 @@ body {
     height: 100vh;
 }
 
+.div-background {
+    background-color: #0077b6;
+    padding: 20px;
+    border-radius: 10px;
+	border: 2px solid #03045e;
+}
+
+.div-logIn {
+	color: #03045e;
+}
+
+.div-logIn h1 {
+	text-align: center;
+}
+
+.div-logIn button{
+	background-color: #0077b6;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
