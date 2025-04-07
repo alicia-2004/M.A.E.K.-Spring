@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
 body {
 	background: linear-gradient(-45deg, #03045E, #0077B6, #03045E, #23d5ab);
 	background-size: 400% 400%;
@@ -21,20 +23,34 @@ body {
 
 .div-logIn {
 	color: #03045e;
+	font-family: 'Bagel Fat One', cursive;
 }
 
 .div-logIn h1 {
 	text-align: center;
+	font-size: 5vw;
 }
 
 .div-logIn button{
-	background-color: #0077b6;
-	color: #fff;
+	background-color: #00b4d8;
+	color: #03045e;
 	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
+	border-radius: 0.5vw;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 5vw;
+	min-width:45vw;
+	min-height:10vh;
+	margin-top:1vh;
+	font-family: 'Bagel Fat One', cursive;
+}
+
+.div-logIn input {
+	width: 90vw;
+	height: 10vh;
+}
+
+.div-logIn label {
+	font-size: 5vw;
 }
 
 @keyframes gradient {
