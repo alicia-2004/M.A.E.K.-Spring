@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
 
+html{
+	overflow: hidden;
+}
+
 body {
 	background: linear-gradient(-45deg, #03045E, #0077B6, #03045E, #23d5ab);
 	background-size: 400% 400%;
@@ -19,38 +23,113 @@ body {
     padding: 20px;
     border-radius: 10px;
 	border: 2px solid #03045e;
+	opacity: 0.8;
 }
+
+/*Login Screen*/
 
 .div-logIn {
 	color: #03045e;
 	font-family: 'Bagel Fat One', cursive;
+	max-width:50vh;
+	max-height:70vh;
 }
 
 .div-logIn h1 {
 	text-align: center;
-	font-size: 5vw;
+	font-size: 10vh;
+	margin-top:-1vh;
+	margin-bottom: -1vh;
 }
 
 .div-logIn button{
 	background-color: #00b4d8;
 	color: #03045e;
 	border: none;
-	border-radius: 0.5vw;
+	border-radius: 0.5vh;
 	cursor: pointer;
-	font-size: 5vw;
-	min-width:45vw;
-	min-height:10vh;
+	font-size: 5vh;
+	min-width:100%;
+	min-height:10%;
 	margin-top:1vh;
 	font-family: 'Bagel Fat One', cursive;
 }
 
 .div-logIn input {
-	width: 90vw;
-	height: 10vh;
+	width: 45vh;
+	height: 5vh;
+	font-size: 4vh;
+	font-family: 'Bagel Fat One', cursive;
+	background-color:#00b4d8;
+	border:none;
 }
 
 .div-logIn label {
-	font-size: 5vw;
+	font-size: 5vh;
+}
+
+.div-logIn input, button, h1{
+	display: flex;
+	justify-content: center;
+}
+
+/*SignUp Screen*/
+.div-signUp {
+	color: #03045e;
+	font-family: 'Bagel Fat One', cursive;
+	max-width:50vh;
+	max-height:80vh;
+}
+
+.div-signUp h1 {
+	text-align: center;
+	font-size: 10vh;
+	margin-top:-1vh;
+	margin-bottom: -1vh;
+}
+
+.div-signUp button{
+	background-color: #00b4d8;
+	color: #03045e;
+	border: none;
+	border-radius: 0.5vh;
+	cursor: pointer;
+	font-size: 5vh;
+	min-width:100%;
+	min-height:10%;
+	margin-top:1vh;
+	font-family: 'Bagel Fat One', cursive;
+}
+
+.div-signUp input {
+	width: 45vh;
+	height: 5vh;
+	font-size: 4vh;
+	font-family: 'Bagel Fat One', cursive;
+	background-color:#00b4d8;
+	border:none;
+}
+
+.div-signUp label {
+	font-size: 5vh;
+}
+
+.div-signUp input, button, h1{
+	display: flex;
+	justify-content: center;
+}
+
+.div-signUp #buttonSubmit {
+	background-color: #00b4d8;
+	color: #03045e;
+	border: none;
+	border-radius: 0.5vh;
+	cursor: pointer;
+	font-size: 5vh;
+	min-width:100%;
+	height:auto;
+	margin-top:1vh;
+	font-family: 'Bagel Fat One', cursive;
 }
 
 @keyframes gradient {

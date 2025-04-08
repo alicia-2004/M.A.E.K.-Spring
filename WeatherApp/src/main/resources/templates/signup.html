@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-	<link rel="stylesheet" type="text/css" href="/css/Main.css"/>
-    <script src="/js/signupJS.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign Up Page</title>
+	<link rel="stylesheet" type="text/css" href="/css/Main.css" />
+	<script src="/js/signupJS.js" defer></script>
 </head>
+
 <body>
-    <form>
-        <label for="fname">Name</label>
-        <input type="text" id="fname" name="fname" required> <br>
+	<div class="div-centerPage">
+		<div class="div-background">
+			<div class="div-signUp">
+				<h1>Sign Up!</h1>
 
-        <label for="fpass">Password</label>
-        <input type="password" id="fpass" name="fpass" required> <br>
+				<form>
+					<label for="fname">Name</label>
+					<input type="text" id="fname" name="fname" required> <br>
 
-        <label for="floc">Location</label>
-        <input type="text" id="floc" name="floc" required> <br>
-		
-		<input type="submit" value="Submit" id="buttonSubmit" onmouseover="style='cursor:pointer'">
-    </form>
+					<label for="fpass">Password</label>
+					<input type="password" id="fpass" name="fpass" required> <br>
 
-    <button type="button" onmouseover="style='cursor:pointer'" id="backButton">Back</button>
+					<label for="floc">Location</label>
+					<input type="text" id="floc" name="floc" required> <br>
+
+					<input type="submit" value="Submit" id="buttonSubmit" onmouseover="style='cursor:pointer'">
+				</form>
+
+				<button type="button" onmouseover="style='cursor:pointer'" id="backButton">Back</button>
+			</div>
+		</div>
+	</div>
 </body>
+
 </html>
