@@ -4,25 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="/css/Main.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/Main.css" />
     <script src="/js/homeJS.js" defer></script>
 </head>
 
 <body>
-    <div class="d-flex flex-column justify-content-center w-100 h-100">
+    <!--<h1 id="title">Welcome </h1>
+    <h3 id="subtitle"></h3>
+    <ul id="list">-->
 
-        <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 id="title">Welcome </h1>
-            <h3 id="subtitle"></h3>
-            <ul id="list">
+    </ul>
+    <div class="div-centerPage">
 
-            </ul>
+        <div class="parent">
+            <div class="topLeft">
+                <div class="cityInfoDiv">
+                    <h1 id="cityName">City Name</h1>
+                    <h2 id="cityTemp">City Temp</h2>
+                </div>
+                <div class="cityImageDiv">
+                    <img id="cityImage" src="https://via.placeholder.com/150" alt="City Image" />
+                </div>
+            </div>
 
-            <table id="table" border="1px">
+            <div class="bottomLeft">
+                <div class="feelsLikeDiv">
 
-            </table>
+                    <div class="feelsLikeImageDiv">
+                        <img src="/images/feelsLikeIcon.png" alt="Feels Like Image" />
+                    </div>
+                    <div class="feelsLikeInfo">
+                        <h3>Feels Like</h3>
+                        <h3 id="feelsLikeTemp">X</h3>
+                    </div>
+                </div>
 
-            <!-- CREDITS FOR BACKGROUND ANIMATION
+                <div class="chanceOfRainDiv">
+                    <div class="chanceOfRainImageDiv">
+                        <img src="/images/chanceOfRainIcon.png" alt="Feels Like Image" />
+                    </div>
+                    <div class="chanceOfRainInfo">
+                        <h3>Chance Of Rain</h3>
+                        <h3 id="chanceOfRain">X</h3>
+                    </div>
+                </div>
+
+                <div class="windSpeedDiv">
+                    <div class="windSpeedImageDiv">
+                        <img src="/images/windSPeedIcon.png" alt="Feels Like Image" />
+                    </div>
+                    <div class="windSpeedInfo">
+                        <h3>Wind</h3>
+                        <h3 id="windSpeed">X</h3>
+                    </div>
+                </div>
+
+                <div class="humidityDiv">
+                    <div class="humidityImageDiv">
+                        <img src="/images/humidityIcon.png" alt="Feels Like Image" />
+                    </div>
+                    <div class="humidityInfo">
+                        <h3>Humidity</h3>
+                        <h3 id="humidity">X</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightColumn">
+                <table id="forecastTable">
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CREDITS FOR BACKGROUND ANIMATION
 			<h1 class="fw-light text-white m-0">Pure CSS Gradient Background Animation</h1>
             <div class="btn-group my-5">
                 <a href="https://codepen-api-export-production.s3.us-west-2.amazonaws.com/zip/PEN/pyBNzX/1578778289271/pure-css-gradient-background-animation.zip" class="btn btn-outline-light" aria-current="page"><i class="fas fa-file-download me-2"></i> SOURCE CODE</a>
@@ -31,9 +88,6 @@
             <a href="https://manuel.pinto.dev" class="text-decoration-none">
                 <h5 class="fw-light text-white m-0">— Pen by Manuel Pinto —</h5>
             </a>-->
-        </div>
-    </div>
-    </div>
 </body>
 
 </html>

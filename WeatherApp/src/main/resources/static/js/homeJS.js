@@ -11,7 +11,6 @@ window.onload = function () {
       nameUser = data.name;
       passwordUser = data.password;
       locationUser = data.location;
-      displayUserData(data);
 
       fetch(
         "http://api.weatherapi.com/v1/forecast.json?key=da0777efff6049af9a1105722250304&q=" +
@@ -31,49 +30,55 @@ window.onload = function () {
     .catch((error) => console.error("Error fetching data, " + error));
 };
 
-function displayUserData(data) {
-  const title=document.getElementById("title");
-  title.innerHTML = "Welcome " + data.name + "!";
-}
-
 function displayWeatherData(item) {
-  const list = document.getElementById("list");
-  const subtitle = document.getElementById("subtitle");
-  list.innerHTML = "";
-  subtitle.innerHTML = "Weather in " + item.location.name + ", " + item.location.country;
+  const cityNameDiv=document.getElementById("cityName");
+  const cityTempDiv=document.getElementById("cityTemp");
+  const feelsLikeTemp=document.getElementById("feelsLikeTemp");
+  const chanceOfRain=document.getElementById("chanceOfRain");
+  const windSpeed=document.getElementById("windSpeed");
+  const humidity=document.getElementById("humidity");
 
-  item.forecast.forecastday.forEach((day) =>{
-    let li = document.createElement("li");
-    li.textContent = `Date: ${day.date}`;
-    list.appendChild(li);
+  const cityImage=document.getElementById("cityImage");
 
-    let ul = document.createElement("ul");
+  cityNameDiv.innerHTML = item.location.name;
+  cityTempDiv.innerHTML = item.current.temp_c+"ºC";
+  feelsLikeTemp.innerHTML = item.current.feelslike_c+"ºC";
+  chanceOfRain.innerHTML = item.forecast.forecastday[0].day.daily_chance_of_rain+"%";
+  windSpeed.innerHTML = item.current.wind_kph+" KM/H";
+  humidity.innerHTML = item.current.humidity+"%";
 
-    li=document.createElement("li");
-    li.textContent = `Average Temperature (Celcius): ${day.day.avgtemp_c}°C`;
-    ul.appendChild(li);
+  cityImage.src = item.current.condition.icon;
 
-    li=document.createElement("li");
-    li.textContent = `Average Temperature (Farrenheit): ${day.day.avgtemp_f}°F`;
-    ul.appendChild(li);
+  const forecastTable = document.getElementById("forecastTable");
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    list.appendChild(ul);
-  })
-}
-function displayFutureDayData(item) {
-  const table = document.getElementById("table");
-  const diaSemana = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+  item.forecast.forecastday.forEach((forecast, index) => {
+    const row = document.createElement("tr");
 
-  item.forecast.forecastday.forEach((day) =>{
-    let tr = document.createElement("tr");
-    let th = document.createElement("th");
-    let td = document.createElement("td");
-    th.textContent = diaSemana[day.date.getDay()];
-    tr.appendChild(th);
+    const dayCell = document.createElement("td");
+    dayCell.textContent = index === 0 ? "Today" : daysOfWeek[new Date(forecast.date).getDay()];
+    row.appendChild(dayCell);
 
-    td.textContent = day.day.condition.icon;
-    tr.appendChild(td);
-    table.appendChild(tr);
-    
-  })
+    const dateCell = document.createElement("td");
+    const date = new Date(forecast.date);
+    dateCell.textContent = `${date.getDate()}/${date.getMonth() + 1}`;
+    row.appendChild(dateCell);
+
+    const iconCell = document.createElement("td");
+    const iconImg = document.createElement("img");
+    iconImg.src = forecast.day.condition.icon;
+    iconImg.alt = forecast.day.condition.text;
+    iconCell.appendChild(iconImg);
+    row.appendChild(iconCell);
+
+    const tempCell = document.createElement("td");
+    tempCell.textContent = `${forecast.day.avgtemp_c}ºC`;
+    row.appendChild(tempCell);
+
+    const conditionCell = document.createElement("td");
+    conditionCell.textContent = forecast.day.condition.text;
+    row.appendChild(conditionCell);
+
+    forecastTable.appendChild(row);
+  });
 }

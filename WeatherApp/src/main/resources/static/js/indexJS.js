@@ -35,6 +35,5 @@ function verifyLogin(items, consumerName, pass){
 
     if(!found){
         alert("Wrong username or password.");
-        location.reload(true);
     }
 }

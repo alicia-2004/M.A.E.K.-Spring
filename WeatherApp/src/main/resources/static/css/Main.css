@@ -74,6 +74,7 @@ body {
 }
 
 /*SignUp Screen*/
+
 .div-signUp {
 	color: #03045e;
 	font-family: 'Bagel Fat One', cursive;
@@ -142,4 +143,57 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/*Main page*/
+
+.parent {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr) 0.5fr repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	}
+	
+	.topLeft { grid-area: 1 / 1 / 4 / 4; }
+	.bottomLeft { grid-area: 4 / 1 / 6 / 4; }
+	.rightColumn { grid-area: 1 / 4 / 6 / 6; }
+
+.bottomLeft img{
+	width: 20%;
+	height: auto;
+	object-fit: contain;
+}
+
+.bottomLeft {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00b4d8;
+	border-radius: 10px;
+	padding: 20px;
+	border: 2px solid #03045e;
+	opacity: 0.8;
+}
+
+.topLeft {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00b4d8;
+	border-radius: 10px;
+	padding: 20px;
+	border: 2px solid #03045e;
+	opacity: 0.8;
+}
+
+.rightColumn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00b4d8;
+	border-radius: 10px;
+	padding: 20px;
+	border: 2px solid #03045e;
+	opacity: 0.8;
 }
