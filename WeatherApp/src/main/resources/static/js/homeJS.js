@@ -49,36 +49,41 @@ function displayWeatherData(item) {
 
   cityImage.src = item.current.condition.icon;
 
-  const forecastTable = document.getElementById("forecastTable");
+  const rightColumn = document.getElementById("rightColumn");
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   item.forecast.forecastday.forEach((forecast, index) => {
-    const row = document.createElement("tr");
+    const forecastDiv = document.createElement("div");
+    forecastDiv.className = "forecastDay"+index;
 
-    const dayCell = document.createElement("td");
-    dayCell.textContent = index === 0 ? "Today" : daysOfWeek[new Date(forecast.date).getDay()];
-    row.appendChild(dayCell);
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "forecastDayName";
+    if(index == 0){
+      dayDiv.textContent="Today";
+    }else{
+      dayDiv.textContent=daysOfWeek[new Date(forecast.date).getDay()]
+    }
+    forecastDiv.appendChild(dayDiv);
 
-    const dateCell = document.createElement("td");
+    const dateDiv = document.createElement("div");
+    dateDiv.className = "forecastDate";
     const date = new Date(forecast.date);
-    dateCell.textContent = `${date.getDate()}/${date.getMonth() + 1}`;
-    row.appendChild(dateCell);
+    dateDiv.textContent = date.getDate()+"/"+(date.getMonth()+1);
+    forecastDiv.appendChild(dateDiv);
 
-    const iconCell = document.createElement("td");
+    const iconDiv = document.createElement("div");
+    iconDiv.className = "forecastIcon";
     const iconImg = document.createElement("img");
     iconImg.src = forecast.day.condition.icon;
     iconImg.alt = forecast.day.condition.text;
-    iconCell.appendChild(iconImg);
-    row.appendChild(iconCell);
+    iconDiv.appendChild(iconImg);
+    forecastDiv.appendChild(iconDiv);
 
-    const tempCell = document.createElement("td");
-    tempCell.textContent = `${forecast.day.avgtemp_c}ºC`;
-    row.appendChild(tempCell);
+    const conditionDiv = document.createElement("div");
+    conditionDiv.className = "forecastCondition";
+    conditionDiv.textContent = forecast.day.condition.text;
+    forecastDiv.appendChild(conditionDiv);
 
-    const conditionCell = document.createElement("td");
-    conditionCell.textContent = forecast.day.condition.text;
-    row.appendChild(conditionCell);
-
-    forecastTable.appendChild(row);
+    rightColumn.appendChild(forecastDiv);
   });
 }

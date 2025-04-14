@@ -147,19 +147,6 @@ body {
 
 /*Main page*/
 
-.div-centerPage{
-	font-family: 'Fredoka One', cursive;
- 	color: #ffffff;
-  	letter-spacing: 2px;
-}
-
-/*Hay que hacerlo aparte*/
-.rightColumn table{
-	font-family: 'Fredoka One', cursive;
- 	color: #ffffff;
-  	letter-spacing: 2px;
-}
-
 /*Div position*/
 .parent {
 	display: grid;
@@ -168,6 +155,10 @@ body {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	width: 95%;
+	font-family: 'Bagel Fat One', cursive;
+	color:white;
+	max-width:100vh;
+	max-height:80vh;
 }
 
 .topLeft { grid-area: 1 / 1 / 4 / 4; margin: 5px; }
@@ -179,7 +170,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #00b4d8;
+	background-color: #0096C7;
 	border-radius: 10px;
 	padding: 20px;
 	border: 2px solid #03045e;
@@ -220,21 +211,69 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #00b4d8;
+	background-color: #0096C7;
 	border-radius: 10px;
 	padding: 20px;
 	border: 2px solid #03045e;
 	opacity: 0.8;
 }
 
-/*RRight div*/
+/*Right Column*/
+.forecastDay0, .forecastDay1, .forecastDay2 {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	}
+	
+	.forecastDayName { grid-area: 1 / 1 / 2 / 4; }
+	.forecastDate { grid-area: 1 / 4 / 2 / 6; }
+	.forecastCondition { grid-area: 2 / 3 / 3 / 6; }
+	.forecastIcon { grid-area: 2 / 1 / 3 / 3; }
+
 .rightColumn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #00b4d8;
+	background-color: #0096C7;
 	border-radius: 10px;
 	padding: 20px;
 	border: 2px solid #03045e;
 	opacity: 0.8;
+	flex-direction:column;
+}
+
+.forecastDay0, .forecastDay1, .forecastDay2 {
+	width:100%;
+	max-height:15vh;
+	background-color:#00B4D8;
+	padding:3%;
+	border-radius: 10px;
+	border: 2px solid #03045e;
+}
+
+.forecastDay1 {
+	margin-top:5%;
+	margin-bottom:5%;
+}
+
+.forecastDate, .forecastCondition {
+	justify-self: end;
+}
+
+.forecastDayName, .forecastDate {
+	font-size: 4vh;
+}
+
+.forecastIcon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	margin-top:-10%;
+}
+
+.forecastCondition {
+	font-size: 3vh;
+	margin-top:10%;
 }
