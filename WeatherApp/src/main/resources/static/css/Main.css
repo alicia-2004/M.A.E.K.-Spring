@@ -207,23 +207,20 @@ body {
 }
 
 /*Bottom div*/
-.bottomLeft img{
-	width:30%;
-	height: auto;
-	object-fit: contain;
-}
-
 .bottomLeft {
 	display: grid;
+	max-width: 100%;
+	max-height: 100%;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	background-color: #0096C7;
 	border-radius: 10px;
-	padding: 20px;
+	padding: 15px;
 	border: 2px solid #03045e;
 	opacity: 0.8;
+	overflow: hidden;
 }
 
 	.feelsLikeDiv{ grid-area: 1 / 1 / 1 / 1;  border: 1px solid green;}
@@ -231,21 +228,30 @@ body {
 	.windSpeedDiv{ grid-area: 1 / 2 / 1 / 2; border: 1px solid green;}
 	.humidityDiv{ grid-area: 2 / 2 / 2 / 2; border: 1px solid green;}
 
-.feelsLikeDiv{
+.feelsLikeDiv, .chanceOfRainDiv, .windSpeedDiv, .humidityDiv {
 	display:flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	padding:0;
 }
 
-.feelsLikeImageDiv img{
-	width: 80%;
-	height: 80%;
+.feelsLikeImageDiv, .feelsLikeInfo, .chanceOfRainImageDiv, .chanceOfRainInfo, .windSpeedImageDiv, .windSpeedInfo, .humidityImageDiv, .humidityInfo {
+	flex: 1; /* Ocupan el mismo ancho */
+	height: 100%;
+  }
+
+.bottomLeft img{
+	max-width: 60%;
+	height: auto;
 	object-fit: contain;
-	margin-top:-10%;
 }
 
+.bottomLeft h3{
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 4vh;
+}
 
 /*Right Column*/
 .forecastDay0, .forecastDay1, .forecastDay2 {
@@ -292,7 +298,7 @@ body {
 }
 
 .forecastDayName, .forecastDate {
-	font-size: 6vh;
+	font-size: 4vh;
 }
 
 .forecastIcon img {
@@ -303,6 +309,6 @@ body {
 }
 
 .forecastCondition {
-	font-size: 3.9vh;
+	font-size: 3vh;
 	margin-top:10%;
 }
