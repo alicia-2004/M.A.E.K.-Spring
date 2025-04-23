@@ -10,6 +10,11 @@ buttonSubmit.addEventListener("click",function(event){
 	const form = event.currentTarget.form;
 	const formData = new FormData(form);
 	
+	if(formData.get('fname')=="" || formData.get('fpass')=="" || formData.get('floc')==""){
+	    alert("Please fill all the fields!");
+	    return;
+	 }
+	
     const data = {
       name: formData.get('fname'),
       password: formData.get('fpass'),
